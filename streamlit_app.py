@@ -1,17 +1,19 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
+"""
+# Amtrak Train Tracker
+This is a lightweight app that tracks Amtrak trains in real time.
+"""
+
+
 import streamlit as st
 import requests
-from pprint import pprint
 import json
 
-"""
-# JustTheWeather
-## Because you just want the weather. 
-"""
-st.image("sun2.jpg", width=250)
-st.write("What is your five digit zip code?")
-st.write("If you do not know, visit this link to find out: https://www.whatismyzip.com/")
-symbol = st.text_input("", "10001")
+
+
+st.title("Amtrak Train Tracker")
+number = st.number_input('Train Number:', value = 715, step = 1)
+
+url = "https://api.amtraker.com/v1/trains/" + str(number)
+
+response = requests.get(url)
+st.write(response)
