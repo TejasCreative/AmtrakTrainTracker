@@ -8,6 +8,10 @@ streamlit = "*"
 pillow = "==9.3.0"
 watchdog = "*"
 requests = "*"
+pandas = "*"
+numpy = "*"
+streamlit-folium = "*"
+folium = "*"
 
 [dev-packages]
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "aff59d8ed1fded955cda85ed0258a41bba86cd516503ce682619d5435d5c6fa7"
+            "sha256": "80a09557983074afe84a8d0706d594d95743557e37bcc037c6ff25c1547bb967"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -39,6 +39,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==1.5"
+        },
+        "branca": {
+            "hashes": [
+                "sha256:55949855214504c7583b71b9a03a84dce2e96a84027613bb53b42d04844ce24e",
+                "sha256:ae706fc7a88dd0296a58bb11c0cb3c6be358491a3b0abee08fe16b4db17814c0"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==0.6.0"
         },
         "cachetools": {
             "hashes": [
@@ -94,6 +102,14 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==0.4"
+        },
+        "folium": {
+            "hashes": [
+                "sha256:8ec44697d18f5932e0fdaee8b19da98625de4d0e72cb30ef56f9479f18e11b9f",
+                "sha256:c894e2c029a8ca40e043a311978a895cefe32d746a94263f807dd7b6b2e9c679"
+            ],
+            "index": "pypi",
+            "version": "==0.14.0"
         },
         "gitdb": {
             "hashes": [
@@ -220,7 +236,7 @@
                 "sha256:ef85cf1f693c88c1fd229ccd1055570cb41cdf4875873b7728b6301f12cd05bf",
                 "sha256:f1b739841821968798947d3afcefd386fa56da0caf97722a5de53e07c4ccedc7"
             ],
-            "markers": "python_version >= '3.8'",
+            "index": "pypi",
             "version": "==1.24.1"
         },
         "packaging": {
@@ -261,7 +277,7 @@
                 "sha256:e9dbacd22555c2d47f262ef96bb4e30880e5956169741400af8b306bbb24a273",
                 "sha256:f6257b314fc14958f8122779e5a1557517b0f8e500cfb2bd53fa1f75a8ad0af2"
             ],
-            "markers": "python_version >= '3.8'",
+            "index": "pypi",
             "version": "==1.5.2"
         },
         "pillow": {
@@ -517,6 +533,14 @@
             ],
             "index": "pypi",
             "version": "==1.16.0"
+        },
+        "streamlit-folium": {
+            "hashes": [
+                "sha256:87f40a8befcf53ad7c041a54d8bfb8a99b6a288390db29f3e86f29b28b096392",
+                "sha256:a456ba9c225b3ed9ccfc5a333d9a2fa8b0bf3e9acd15851832159f477a5f8a1b"
+            ],
+            "index": "pypi",
+            "version": "==0.10.0"
         },
         "toml": {
             "hashes": [
