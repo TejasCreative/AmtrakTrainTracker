@@ -11,6 +11,10 @@ import pandas as pd
 import numpy as np
 from streamlit_folium import st_folium as stf
 import folium
+from datetime import datetime
+import pytz
+from dateutil import tz
+import time
 
 st.title("Amtrak Train Tracker")
 number = st.number_input('Train Number:', value = 715, step = 1)
@@ -18,6 +22,10 @@ number = st.number_input('Train Number:', value = 715, step = 1)
 url = "https://api.amtraker.com/v1/trains/" + str(number)
 
 response = requests.get(url)
+
+if(response.status_code == 500):
+    st.write("There is no train with that number.")
+    st.stop()
 
 data = json.loads(response.text)
 latitude = data[0]['lat']
@@ -40,11 +48,35 @@ for i in range(trainCount):
     trainTimely = data[i]['trainTimely']
     serviceDisruption = data[i]['serviceDisruption']
     stationCount = len(data[i]['stations'])
+    latitudeRounded = round(latitude, 5)
+    longitudeRounded = round(longitude, 5)
+
+    # lastValTS = lastValTS[11:23]
+
+    lastValTS = lastValTS[11:19]
+    local_zone = tz.tzlocal()
+    local_dt = datetime.strptime(lastValTS, "%H:%M:%S")
+
+    from_zone = tz.tzutc()
+    to_zone = tz.tzlocal()
+
+
+    utc = local_dt.replace(tzinfo=from_zone)
+    local_dt = utc.astimezone(to_zone)
+
+
     
-    st.write("Train " + str(i+1) + " is at " + str(latitude) + ", " + str(longitude) + ".")
+    
+    local_dt = local_dt.strftime("%I:%M:%S %p")
+    lastValTS = local_dt
+    st.write("Last updated at " + lastValTS + ".")
+
+    st.write("Train " + str(i+1) + " is at Latitude " + str(latitudeRounded) + ", and Longitude " + str(longitudeRounded) + ".")
     m  = folium.Map(location=[latitude, longitude], zoom_start=10)
     folium.Marker([latitude, longitude], popup='Train Location',).add_to(m)
     st_data = stf(m, height=500, width=1000)
+
+
 
 
 

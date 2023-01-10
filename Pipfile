@@ -12,6 +12,8 @@ pandas = "*"
 numpy = "*"
 streamlit-folium = "*"
 folium = "*"
+pytz = "*"
+python-dateutil = "*"
 
 [dev-packages]
 
