@@ -162,7 +162,6 @@ for i in range(trainCount):
                 elif('estDep' in stationinfo[i]):
                     deptiming_dt =  time_convert(stationinfo[i]['postArr'])
                     v_deptiming_dt =  time_convert(stationinfo[i]['estDep'])
-
                     trainline = trainline + "Arrived at " + str(deptiming_dt) + " and estmiated departure is at " + str(v_deptiming_dt) + ', ' + stationinfo[i]['estDepCmnt'].lower()
                 elif('postDep' in stationinfo[i]):
                     deptiming_dt =  time_convert(stationinfo[i]['postDep'])
