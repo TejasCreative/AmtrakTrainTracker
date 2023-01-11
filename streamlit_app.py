@@ -165,7 +165,7 @@ for i in range(trainCount):
     if(trainTimely == "On Time"):
         st.write("This train is running on time.")
     if(trainTimely == "Late" and serviceDisruption == True):
-        st.write("This train is running late and is a service disruption on this train.")
+        st.write("This train is running late and there is a service disruption on this train.")
     elif(serviceDisruption == True):
         st.write("There is a service disruption on this train.")
     elif(trainTimely == "Late"):
