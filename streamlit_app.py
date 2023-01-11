@@ -3,7 +3,6 @@
 This is a lightweight app that tracks Amtrak trains in real time.
 """
 
-
 import streamlit as st
 import requests
 import json
