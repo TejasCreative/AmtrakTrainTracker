@@ -164,10 +164,12 @@ for i in range(trainCount):
         st.write("Train " + str(i+1) + " is at Latitude " + str(latitudeRounded) + ", and Longitude " + str(longitudeRounded) + " and is currently heading " + str(heading) + " at " + str(velocityrounded) + " mph.")
     if(trainTimely == "On Time"):
         st.write("This train is running on time.")
-    if(trainTimely == "Late"):
-        st.write("This train is running late.")
-    if(serviceDisruption == True):
+    if(trainTimely == "Late" and serviceDisruption == True):
+        st.write("This train is running late and is a service disruption on this train.")
+    elif(serviceDisruption == True):
         st.write("There is a service disruption on this train.")
+    elif(trainTimely == "Late"):
+        st.write("This train is running late.")
 
     
     local_dt = local_dt.strftime("%I:%M:%S %p")
