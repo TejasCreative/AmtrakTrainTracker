@@ -136,10 +136,8 @@ for i in range(trainCount):
     folium.Marker([latitude, longitude], popup='Train Location',).add_to(m)
     st_data = stf(m, height=500, width=1000)
     st.caption("Last updated at " + lastValTS + " " + timezone + ".")
-    first_station = 0
-    
+  
     stationinfo = data[i]['stations']
-
     if(trainState != "Completed"):
         for i in range(stationCount):
             if('stationName' in stationinfo[i]):
@@ -151,6 +149,7 @@ for i in range(trainCount):
             if(i == 0):
                 if('postDep' not in stationinfo[i]):
                     trainline = trainline + "Scheduled Departure is at " + stationinfo[i]['schDep']
+
                 else:
                     deptiming_dt =  time_convert(stationinfo[i]['postDep'])
                     trainline = trainline + "Departed at " + str(deptiming_dt) + ", " + stationinfo[i]['postCmnt'].lower()
@@ -159,13 +158,16 @@ for i in range(trainCount):
                 if('estArr' in stationinfo[i]):
                     deptiming_dt =  time_convert(stationinfo[i]['estArr'])
                     trainline = trainline + "Estmiated Arrival is at " + str(deptiming_dt) + ", " + stationinfo[i]['estArrCmnt'].lower()
+
                 elif('estDep' in stationinfo[i]):
                     deptiming_dt =  time_convert(stationinfo[i]['postArr'])
                     v_deptiming_dt =  time_convert(stationinfo[i]['estDep'])
                     trainline = trainline + "Arrived at " + str(deptiming_dt) + " and estmiated departure is at " + str(v_deptiming_dt) + ', ' + stationinfo[i]['estDepCmnt'].lower()
+
                 elif('postDep' in stationinfo[i]):
                     deptiming_dt =  time_convert(stationinfo[i]['postDep'])
                     trainline = trainline + "Departed at " + str(deptiming_dt) + ", " + stationinfo[i]['postCmnt'].lower()
+
                 else:
                     trainline = trainline + "No Data"
 
