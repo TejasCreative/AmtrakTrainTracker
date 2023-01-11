@@ -94,7 +94,7 @@ if(response.status_code == 500):
 
 data = json.loads(response.text)
 if(len(data) == 0 ):
-    st.write("There is no train running with that number.")
+    st.write("That train is not running currently")
     st.stop()
 latitude = data[0]['lat']
 
