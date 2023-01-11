@@ -243,34 +243,3 @@ for i in range(trainCount):
 
 
             st.write(trainline)
-
-
-
-
-
-
-
-# df = pd.DataFrame(data)
-# df = df[['lat', 'lon', 'routeName', 'heading', 'velocity', 'lastValTS', 'trainTimely', 'serviceDisruption']]
-# df = df.rename(columns = {'lat': 'Latitude', 'lon': 'Longitude', 'routeName': 'Route Name', 'heading': 'Heading', 'velocity': 'Velocity', 'lastValTS': 'Last Value Timestamp', 'trainTimely': 'Train Timely', 'serviceDisruption': 'Service Disruption'})
-# df = df.transpose()
-# df.index.name = 'Data'
-# df.columns = ['Train Data']
-# df = df.reset_index()
-# df = df.rename(columns = {'index': 'Data'})
-# df = df.set_index('Data')
-# df = df.replace({True: 'Yes', False: 'No'})
-
-
-
-
-
-
-
-# st.write(df)
-
-
-# st.table(df)
-
-
-# st.write(data)
