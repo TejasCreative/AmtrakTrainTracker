@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 streamlit = "*"
-pillow = "==9.3.0"
+pillow = "==10.0.1"
 watchdog = "*"
 requests = "*"
 pandas = "*"
