@@ -23,7 +23,7 @@ packaging==23.1
 pandas==1.5.2
 pillow==9.3.0
 protobuf==3.20.3
-pyarrow==13.0.0
+pyarrow==14.0.1
 pydeck==0.8.1b0
 pygments==2.16.1
 pympler==1.0.1
